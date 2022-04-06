@@ -89,21 +89,6 @@ class Piece {
             this.draw();
         }
     }
-    // lock(){
-    //     for(let r = 0; r < this.activeTetromino.length; r++){
-    //         for(let c = 0; c < this.activeTetromino.length; c++){
-    //             if(!this.activeTetromino[r][c]){
-    //                 continue
-    //             }
-    //             if(this.y + r < 0){
-    //                 alert("game over");
-    //                    gameOver = true;
-    //                 break;
-    //             }
-    //             board[this.y + r][this.x + c] = this.color;
-    //         }
-    //     }
-    // }
     lock(){
         for(let r = 0; r < this.activeTetromino.length; r++){
             for(let c = 0; c < this.activeTetromino.length; c++){
@@ -117,8 +102,7 @@ class Piece {
                 }
                 board[this.y + r][this.x + c] = this.color;
             }
-        }
-        console.log(board[this.y + r][this.x + c] = this.color)
+        }   
         //xử lý ăn điểm
         
         for (let r = 0; r < ROW ; r++){
@@ -136,8 +120,7 @@ class Piece {
                 board[0][c] = COLOR;
             }
             score += 10;     
-        }
-        // level uppp
+        }   //lv up
         if (score > 0){  
             level = 1;
             drop(500, true);
@@ -151,7 +134,7 @@ class Piece {
     }
     drawBoard();
     document.getElementById("score").innerText = score;
-        
+    
     
     }
 
@@ -224,7 +207,7 @@ document.addEventListener("keydown", function(e){
         p.moveRight();
     }else if(e.keyCode == 38){
         p.rotate();
-    }else if(e.keyCode == 40){
+    }else if(e.keyCode ==40){
         p.moveDown();
     }else if(e.keyCode == 32){ //start game
         drop();
@@ -233,10 +216,9 @@ document.addEventListener("keydown", function(e){
         clearInterval(interval);
         alert('Nhấn space để tiếp tục')
     }
+    
 })
-function start(){
-    drop();
-}
+
 
 
 // hiển thị rơi
@@ -244,17 +226,14 @@ let gameOver = false;
 let interval;
 
 function drop(time = 1000, clear = false) {
+    
     if(clear) {
         clearInterval(interval);
     }    
     interval = setInterval(function(){
         if (!gameOver){        
             p.moveDown();
-        }    
+        }
+    
     }, time)
 }
-
-
-window.addEventListener('keydown', (evt) => {
-    console.log(evt);
-})
