@@ -4,20 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tetris Game</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <title>Tetric Game</title>
 </head>
 <body>
-    <h1>Tetric Game</h1>
+    <div id="play">
+        <audio id="audio">
+            <source src="" type="audio/mpeg">
+        </audio>
+
+        <button id="playPauseBTN" onclick="playPause()">Play ►</button>
+         
+         
+        <!-- <button onclick="stop()">Stop ▋</button> -->
+    </div>
+
     <div class="game">
+        <h1>Tetric Game</h1>
+
         <div class="score">
             Score <div id="score">0</div>
             Level <div id="level">0</div>
         </div>
 
         <canvas id="canvas" width="400" height="740"></canvas>
+
     </div>
-    <script src="./assets//shape.js"></script>
-    <script src="./assets/main.js"></script>
+    <div>
+        <i class="bi bi-arrow-up"> Xoay, </i>
+        <i class="bi bi-arrow-left"> qua trái,</i>
+        <i class="bi bi-arrow-right"> qua phải,</i>
+        <i class="bi bi-arrow-down"> Di chuyển xuống dưới</i>
+
+
+    </div>
 
 </body>
+<script src="./assets//shape.js"></script>
+<script src="./assets/main.js"></script>
+<script src="./assets/audio.js"></script>
 </html>

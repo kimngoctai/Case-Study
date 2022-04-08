@@ -9,6 +9,8 @@ let score = 0;
 let level = 0;
 // let time = 1000;
 // tạo bảng
+
+
 function drawSquare(x,y, color){
     ctx.fillStyle = color;
     ctx.fillRect(x * SQ, y * SQ, SQ, SQ);
@@ -48,7 +50,7 @@ class Piece {
         this.x = 3;
         this.y = -2;
     }
-
+  
     fill(color){                                    
         for (let r = 0; r < this.activeTetromino.length; r++){
             for (let c = 0; c < this.activeTetromino.length; c++){
@@ -70,6 +72,7 @@ class Piece {
             this.unDraw();
             this.y++;
             this.draw();
+            
         }else {
             this.lock();
             p = randomPiece();
@@ -123,6 +126,8 @@ class Piece {
         }   //lv up
         if (score > 0){  
             level = 1;
+            
+            
             drop(500, true);
         }
         if (score > 40){ 
@@ -237,3 +242,4 @@ function drop(time = 1000, clear = false) {
     
     }, time)
 }
+
