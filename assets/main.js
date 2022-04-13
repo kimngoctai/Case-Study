@@ -50,7 +50,7 @@ class Piece {
         this.x = 3;
         this.y = -2;
     }
-  
+
     fill(color){                                    
         for (let r = 0; r < this.activeTetromino.length; r++){
             for (let c = 0; c < this.activeTetromino.length; c++){
@@ -102,6 +102,7 @@ class Piece {
                     alert("game over");
                     gameOver = true;
                     break;
+                    
                 }
                 board[this.y + r][this.x + c] = this.color;
             }
@@ -219,7 +220,7 @@ document.addEventListener("keydown", function(e){
         
     }else if(e.keyCode == 27){
         clearInterval(interval);
-        alert('Nhấn space để tiếp tục')
+    
     }
     
 })
